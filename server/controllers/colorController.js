@@ -27,7 +27,7 @@ colorController.post = async (req, res, next) => {
       status: 500
     });
   }
-}
+};
 
 colorController.get = async (req, res, next) => {
   try {
@@ -41,11 +41,11 @@ colorController.get = async (req, res, next) => {
       status: 500
     });
   }
-}
+};
 
 colorController.getRandom = (req, res, next) => {
   res.locals.colorsList = randomColors();
   return next();
-}
+};
 
 module.exports = colorController;
