@@ -1,10 +1,9 @@
-require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
 const port = process.env.PORT || 4000;
 const colorController = require('./controllers/colorController');
-const MONGO_URI = process.env.MONGO_URI;
+const MONGO_URI = "mongodb+srv://calvin:codesmith@cluster0.milss.mongodb.net/?retryWrites=true&w=majority";
 
 mongoose.connect(MONGO_URI, {
   useNewUrlParser: true,
