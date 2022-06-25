@@ -1,10 +1,13 @@
 require('dotenv').config();
 const express = require('express');
+const cors = require('cors');
 const mongoose = require('mongoose');
 const app = express();
 const port = process.env.PORT || 4000;
 const colorController = require('./controllers/colorController');
 const MONGO_URI = process.env.MONGO_URI;
+app.use(express.json());
+app.use(cors());
 
 mongoose.connect(MONGO_URI, {
   useNewUrlParser: true,
@@ -17,7 +20,6 @@ db.once("open", () => {
   console.log("DB connected");
 });
 
-app.use(express.json());
 
 app.get('/', (req, res) => {
   res.send('hello')
