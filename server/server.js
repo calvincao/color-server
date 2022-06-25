@@ -22,7 +22,7 @@ db.once("open", () => {
 
 
 app.get('/', (req, res) => {
-  res.send('hello')
+  res.send('go to /colors for preset array of colors and go to /random for random colors')
 });
 
 app.post('/colors', colorController.post, async (req, res) => {
