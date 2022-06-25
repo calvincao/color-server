@@ -3,7 +3,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
 const port = process.env.PORT || 4000;
-const colorController = require('./controllers/colorController')
+const colorController = require('./controllers/colorController');
 const MONGO_URI = process.env.MONGO_URI;
 
 mongoose.connect(MONGO_URI, {
@@ -21,19 +21,19 @@ app.use(express.json());
 
 app.get('/', (req, res) => {
   res.send('hello')
-})
+});
 
 app.post('/colors', colorController.post, async (req, res) => {
   return res.status(200).json(res.locals.doc);
-})
+});
 
 app.get('/colors', colorController.get, (req, res) => {
   return res.status(200).json(res.locals.colorsList);
-})
+});
 
 app.get('/random', colorController.getRandom, (req, res) => {
   return res.status(200).json(res.locals.colorsList);
-})
+});
 
 // local error handler
 app.use((req, res) => {

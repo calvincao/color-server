@@ -24,6 +24,7 @@ colorController.post = async (req, res, next) => {
     console.log(err);
     return next({
       message: 'Error in colorController.post middleware',
+      error: err,
       status: 500
     });
   }
@@ -38,6 +39,7 @@ colorController.get = async (req, res, next) => {
     console.log(err);
     return next({
       message: 'Error in colorController.get middleware',
+      error: err,
       status: 500
     });
   }
