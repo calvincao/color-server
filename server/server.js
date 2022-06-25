@@ -1,6 +1,6 @@
-require('dotenv').config();
+// require('dotenv').config();
 const express = require('express');
-const mongoose = require('mongoose');
+// const mongoose = require('mongoose');
 const app = express();
 const port = process.env.PORT || 4000;
 // const colorController = require('./controllers/colorController');
@@ -36,18 +36,18 @@ app.get('/', (req, res) => {
 // });
 
 // local error handler
-app.use((req, res) => {
-  res.status(404).send('ERROR 404 - Page not found');
-});
+// app.use((req, res) => {
+//   res.status(404).send('ERROR 404 - Page not found');
+// });
 
 // global error handler
-app.use((err, req, res, next) => {
-  const errHandler = {
-    message: 'Error caught in unknown middleware',
-    status: 500
-  };
-  const error = Object.assign({}, errHandler, err);
-  res.status(error.status).send(error.message);
-});
+// app.use((err, req, res, next) => {
+//   const errHandler = {
+//     message: 'Error caught in unknown middleware',
+//     status: 500
+//   };
+//   const error = Object.assign({}, errHandler, err);
+//   res.status(error.status).send(error.message);
+// });
 
 app.listen(port, () => console.log(`listening on port ${port}`));
